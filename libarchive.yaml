@@ -1,0 +1,42 @@
+Name: libarchive
+Summary: A library for handling streaming archive formats
+Version: 2.8.4
+Release: 1
+Group: System/Libraries
+License: BSD
+URL: http://code.google.com/p/libarchive/
+Sources:
+    - http://libarchive.googlecode.com/files/libarchive-%{version}.tar.gz
+Description: |
+    Libarchive is a programming library that can create and read several different 
+    streaming archive formats, including most popular tar variants, several cpio 
+    formats, and both BSD and GNU ar variants. It can also write shar archives and 
+    read ISO9660 CDROM images and ZIP archives.
+
+PkgConfigBR: 
+    - liblzma
+    - libxml-2.0
+    - openssl
+    - ext2fs
+PkgBR:
+    - bison
+    - sharutils
+    - zlib-devel
+    - bzip2-devel
+    - libacl-devel
+    - libattr-devel
+    - automake
+    - autoconf
+    - libtool
+Configure: configure
+ConfigOptions:
+    - --disable-bsdtar
+    - --disable-bsdcpio
+Builder: make
+SubPackages:
+    - Name: devel
+      Summary: Development files for %{name}
+      Group: Development/Libraries
+      Description: |
+          The %{name}-devel package contains libraries and header files for
+          developing applications that use %{name}.
