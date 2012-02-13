@@ -1,6 +1,6 @@
 Name: libarchive
 Summary: A library for handling streaming archive formats
-Version: 2.8.4
+Version: 3.0.3
 Release: 1
 Group: System/Libraries
 License: BSD
@@ -13,7 +13,8 @@ Description: |
     formats, and both BSD and GNU ar variants. It can also write shar archives and 
     read ISO9660 CDROM images and ZIP archives.
 
-PkgConfigBR: 
+PkgConfigBR:
+    - zlib
     - liblzma
     - libxml-2.0
     - openssl
@@ -21,7 +22,6 @@ PkgConfigBR:
 PkgBR:
     - bison
     - sharutils
-    - zlib-devel
     - bzip2-devel
     - libacl-devel
     - libattr-devel
