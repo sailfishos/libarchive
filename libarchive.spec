@@ -49,6 +49,15 @@ The %{name}-devel package contains libraries and header files for
 developing applications that use %{name}.
 
 
+%package -n bsdtar
+Summary:    Bsdtar is a program to create and read different streaming archive formats
+Group:      Applications/Archiving
+Requires:   %{name} = %{version}-%{release}
+
+%description -n bsdtar
+This package contains the bsdtar cmdline utility
+
+
 
 %prep
 %setup -q -n %{name}-%{version}
@@ -63,7 +72,6 @@ autoreconf  || :
 # << build pre
 
 %configure --disable-static \
-    --disable-bsdtar \
     --disable-bsdcpio
 
 make %{?jobs:-j%jobs}
@@ -97,6 +105,9 @@ find $RPM_BUILD_ROOT -name tar.5 -exec rm -f {} ';'
 
 
 
+
+
+
 %files
 %defattr(-,root,root,-)
 # >> files
@@ -114,4 +125,10 @@ find $RPM_BUILD_ROOT -name tar.5 -exec rm -f {} ';'
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*
 # << files devel
+
+%files -n bsdtar
+%defattr(-,root,root,-)
+%{_bindir}/bsdtar
+# >> files bsdtar
+# << files bsdtar
 

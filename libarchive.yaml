@@ -30,7 +30,6 @@ PkgBR:
     - libtool
 Configure: configure
 ConfigOptions:
-    - --disable-bsdtar
     - --disable-bsdcpio
 Builder: make
 SubPackages:
@@ -40,3 +39,12 @@ SubPackages:
       Description: |
           The %{name}-devel package contains libraries and header files for
           developing applications that use %{name}.
+    - Name: bsdtar
+      AsWholeName: true
+      Summary: Bsdtar is a program to create and read different streaming archive formats
+      Group: Applications/Archiving
+      Description: |
+          This package contains the bsdtar cmdline utility
+
+      Files:
+          - "%{_bindir}/bsdtar"

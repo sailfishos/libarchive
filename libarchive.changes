@@ -1,3 +1,6 @@
+* Tue Mar 13 2012 David Greaves <david@dgreaves.com> - 3.0.3
+- Enable and package bsdtar for use with 'build' in the SDK
+
 * Mon Feb 13 2012 Marko Saukko <marko.saukko@gmail.com> - 3.0.3
 - Update to version 3.0.3
 
