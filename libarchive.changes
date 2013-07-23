@@ -1,3 +1,7 @@
+* Tue Jul 23 2013 Davide Bettio <davide.bettio@ispirata.com> - 3.1.2
+- Update to version 3.1.2
+- Added patch for CVE-2013-0211 from Fedora git
+
 * Tue Mar 13 2012 David Greaves <david@dgreaves.com> - 3.0.3
 - Enable and package bsdtar for use with 'build' in the SDK
 

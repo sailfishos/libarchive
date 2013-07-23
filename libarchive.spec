@@ -7,13 +7,14 @@
 
 Name:       libarchive
 Summary:    A library for handling streaming archive formats
-Version:    3.0.3
+Version:    3.1.2
 Release:    1
 Group:      System/Libraries
 License:    BSD
 URL:        http://code.google.com/p/libarchive/
 Source0:    http://libarchive.googlecode.com/files/libarchive-%{version}.tar.gz
 Source100:  libarchive.yaml
+Patch0:     libarchive-3.1.3-CVE-2013-0211_read_buffer_overflow.patch
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(zlib)
@@ -62,6 +63,8 @@ This package contains the bsdtar cmdline utility
 %prep
 %setup -q -n %{name}-%{version}
 
+# libarchive-3.1.3-CVE-2013-0211_read_buffer_overflow.patch
+%patch0 -p1
 # >> setup
 # << setup
 
