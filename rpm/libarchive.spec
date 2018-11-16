@@ -1,6 +1,6 @@
 Name:       libarchive
 Summary:    A library for handling streaming archive formats
-Version:    3.2.0
+Version:    3.3.3
 Release:    1
 Group:      System/Libraries
 License:    BSD
