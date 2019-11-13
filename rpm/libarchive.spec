@@ -1,8 +1,7 @@
 Name:       libarchive
 Summary:    A library for handling streaming archive formats
-Version:    3.3.3
+Version:    3.4.0
 Release:    1
-Group:      System/Libraries
 License:    BSD
 URL:        http://code.google.com/p/libarchive/
 Source0:    http://libarchive.googlecode.com/files/libarchive-%{version}.tar.gz
@@ -73,12 +72,11 @@ find $RPM_BUILD_ROOT -name tar.5 -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-%doc COPYING
+%license COPYING
 %{_libdir}/*.so.*
 
 %files devel
 %defattr(-,root,root,-)
-%doc
 %{_includedir}/*
 %{_mandir}/*/*
 %{_libdir}/*.so
