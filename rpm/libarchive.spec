@@ -1,10 +1,10 @@
 Name:       libarchive
 Summary:    A library for handling streaming archive formats
-Version:    3.4.0
+Version:    3.5.2
 Release:    1
 License:    BSD
-URL:        http://code.google.com/p/libarchive/
-Source0:    http://libarchive.googlecode.com/files/libarchive-%{version}.tar.gz
+URL:        https://github.com/sailfishos/libarchive
+Source0:    libarchive-%{version}.tar.gz
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(zlib)
@@ -29,7 +29,6 @@ read ISO9660 CDROM images and ZIP archives.
 
 %package devel
 Summary:    Development files for %{name}
-Group:      Development/Libraries
 Requires:   %{name} = %{version}-%{release}
 
 %description devel
@@ -38,7 +37,6 @@ developing applications that use %{name}.
 
 %package -n bsdtar
 Summary:    Bsdtar is a program to create and read different streaming archive formats
-Group:      Applications/Archiving
 Requires:   %{name} = %{version}-%{release}
 
 %description -n bsdtar
@@ -54,10 +52,9 @@ build/autogen.sh
 	   --disable-bsdcat \
 	   --disable-bsdcpio
 
-make %{?jobs:-j%jobs}
+%make_build
 
 %install
-rm -rf %{buildroot}
 %make_install
 
 iconv -f latin1 -t utf-8 < NEWS > NEWS.utf8; cp NEWS.utf8 NEWS
