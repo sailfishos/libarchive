@@ -1,6 +1,6 @@
 Name:       libarchive
 Summary:    A library for handling streaming archive formats
-Version:    3.5.2
+Version:    3.6.2
 Release:    1
 License:    BSD
 URL:        https://github.com/sailfishos/libarchive
