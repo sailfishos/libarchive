@@ -1,6 +1,6 @@
 Name:       libarchive
 Summary:    A library for handling streaming archive formats
-Version:    3.6.2
+Version:    3.7.2
 Release:    1
 License:    BSD
 URL:        https://github.com/sailfishos/libarchive
@@ -50,7 +50,8 @@ build/autogen.sh
 
 %configure --disable-static \
 	   --disable-bsdcat \
-	   --disable-bsdcpio
+	   --disable-bsdcpio \
+	   --disable-bsdunzip
 
 %make_build
 
