@@ -1,6 +1,6 @@
 Name:       libarchive
 Summary:    A library for handling streaming archive formats
-Version:    3.7.2
+Version:    3.7.3
 Release:    1
 License:    BSD
 URL:        https://github.com/sailfishos/libarchive
@@ -43,7 +43,7 @@ Requires:   %{name} = %{version}-%{release}
 This package contains the bsdtar cmdline utility
 
 %prep
-%setup -q -n %{name}-%{version}/%{name}
+%autosetup -n %{name}-%{version}/%{name}
 
 %build
 build/autogen.sh
@@ -69,17 +69,14 @@ find $RPM_BUILD_ROOT -name tar.5 -exec rm -f {} ';'
 %postun -p /sbin/ldconfig
 
 %files
-%defattr(-,root,root,-)
 %license COPYING
 %{_libdir}/*.so.*
 
 %files devel
-%defattr(-,root,root,-)
 %{_includedir}/*
 %{_mandir}/*/*
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*
 
 %files -n bsdtar
-%defattr(-,root,root,-)
 %{_bindir}/bsdtar
