@@ -1,12 +1,10 @@
 Name:       libarchive
 Summary:    A library for handling streaming archive formats
-Version:    3.7.4
+Version:    3.7.9
 Release:    1
 License:    BSD
 URL:        https://github.com/sailfishos/libarchive
 Source0:    libarchive-%{version}.tar.gz
-Patch1:     0001-rar4-reader-protect-copy_from_lzss_window_to_unp-217.patch
-Patch2:     0002-Fix-CVE-2024-26256-2269.patch
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(zlib)
